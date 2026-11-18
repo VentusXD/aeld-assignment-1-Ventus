@@ -14,9 +14,9 @@ if [ ! -d "$filesdir" ]; then
     exit 1
 fi
 
-X=$(find "$filesdir" -type f | wc -l | tr -d ' ') # count files
+X=$(find "$filesdir" -type f | wc -l) # count files
 
-Y=$(grep -rF -e "$searchstr" "$filesdir" 2>/dev/null | wc -l | tr -d ' ') # count dir
+Y=$(grep -rF -e "$searchstr" "$filesdir" 2>/dev/null | wc -l) # count dir
 
 echo "The number of files are ${X} and the number of matching lines are ${Y}"
 
